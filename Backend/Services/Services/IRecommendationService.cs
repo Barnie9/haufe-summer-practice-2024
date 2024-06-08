@@ -5,5 +5,5 @@ namespace Services;
 public interface IRecommendationService
 {
     Task<IEnumerable<RecommendationDto>> GetRecommendationsAsync();
-    Task<RecommendationDto> CreateAsync(RecommendationDto recommendationDto);
+    Task<RecommendationDto?> CreateAsync(Guid userId, RecommendationDto recommendationDto);
 }

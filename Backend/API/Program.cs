@@ -60,6 +60,12 @@ builder.Services.AddCors(options =>
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<IUserService, UserService>();
 
+builder.Services.AddTransient<IRecommendationRepository, RecommendationRepository>();
+builder.Services.AddTransient<IRecommendationService, RecommendationService>();
+
+builder.Services.AddTransient<IGroupRepository, GroupRepository>();
+builder.Services.AddTransient<IGroupService, GroupService>();
+
 builder.Services.AddDbContext<MyDbContext>();
 
 

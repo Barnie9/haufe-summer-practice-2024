@@ -1,3 +1,4 @@
+import MovieMates from "../assets/MovieMates.svg";
 import Button from "../components/Button";
 import { useMsal } from "@azure/msal-react";
 import { loginRequest } from "../config/authConfig";
@@ -46,18 +47,18 @@ const Login = () => {
 			}}
 		>
 			{/* <img
-				src={CalendaurusLogo}
-				alt="Calendaurus Logo"
+				src={MovieMates}
+				alt="Logo"
 				style={{
-					width: "40%",
+					width: "20%",
 				}}
 			/> */}
 
 			<Button
 				text="LOGIN"
 				textColor="--white"
-				backgroundColor="--red-primary"
-				hoverBackgroundColor="--red-secondary"
+				backgroundColor="--blue-primary"
+				hoverBackgroundColor="--blue-secondary"
 				onClick={signIn}
 			/>
 		</div>

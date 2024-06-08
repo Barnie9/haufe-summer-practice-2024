@@ -1,15 +1,14 @@
 :root {
 	--font-family: sans-serif;
 
-	--red-primary: #e5173f;
-	--red-secondary: #c21435;
-	--red-third: #ec516f;
+	--blue-primary: #002887;
+	--blue-secondary: #001e55;
 
-	--blue-primary: #54b9b3;
+	--green-primary: #d2ff5a;
 
 	--white: #ffffff;
-	--gray: #808080;
 	--light-gray: #f0f0f0;
+	--gray: #808080;
 	--black: #000000;
 }
 

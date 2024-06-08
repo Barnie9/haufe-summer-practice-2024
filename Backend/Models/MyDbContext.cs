@@ -19,4 +19,5 @@ public class MyDbContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
     public virtual DbSet<Recommendation> Recommendations { get; set; }
+    public virtual DbSet<Group> Groups { get; set; }
 }

@@ -18,6 +18,14 @@ public class UserController : ControllerBase
         _userService = userService;
     }
 
+    [HttpGet]
+    public async Task<ActionResult<List<string>>> GetAllUserEmails()
+    {
+        var emails = await _userService.GetAllUserEmailsAsync();
+
+        return Ok(emails);
+    }
+
     [HttpPost]
     public async Task<ActionResult<UserDto>> CreateUser([FromBody] UserDto userDto)
     {
@@ -31,5 +39,22 @@ public class UserController : ControllerBase
         }
 
         return Ok(user);
+    }
+
+    [HttpGet("groups")]
+    public async Task<ActionResult<List<String>>> GetGroupNames()
+    {
+        var currentUserEmail = HttpContext.User.Identity!.Name;
+
+        var user = await _userService.GetByEmailAsync(currentUserEmail!);
+
+        if (user == null)
+        {
+            return NotFound();
+        }
+
+        var groupNames = await _userService.GetGroupNamesAsync(user.Id);
+
+        return Ok(groupNames);
     }
 }

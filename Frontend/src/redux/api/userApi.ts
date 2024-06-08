@@ -11,7 +11,7 @@ export const userApi = createApi({
 	endpoints: (builder) => ({
 		createUser: builder.mutation<User, User>({
 			query: (user) => ({
-				url: "user",
+				url: "User",
 				method: "POST",
 				body: {
 					name: user.name,
@@ -22,10 +22,19 @@ export const userApi = createApi({
 				},
 			}),
 			invalidatesTags: ["User"],
-		}), 
+		}),
+		getAllUserEmails: builder.query<string[], User>({
+			query: (user) => ({
+				url: "User",
+				headers: {
+					Authorization: `Bearer ${user.token}`,
+				},
+			}),
+		}),
 	}),
 });
 
 export const {
 	useCreateUserMutation,
+	useGetAllUserEmailsQuery,
 } = userApi;

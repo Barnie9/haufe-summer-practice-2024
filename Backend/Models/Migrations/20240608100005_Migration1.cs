@@ -33,7 +33,6 @@ namespace Models.Migrations
                     Description = table.Column<string>(type: "nvarchar(1024)", maxLength: 1024, nullable: false),
                     Location = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
                     Rating = table.Column<double>(type: "float", nullable: false),
-                    Image = table.Column<byte[]>(type: "image", nullable: false),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>

@@ -16,7 +16,7 @@ public class RecommendationRepository : IRecommendationRepository
 
     public async Task<IEnumerable<Recommendation>> GetRecommendationsAsync()
     {
-        return await _recommendations.ToListAsync();
+        return await _recommendations.Include(entry => entry.User).ToListAsync();
     }
 
     public async Task<Recommendation> CreateAsync(Recommendation recommendation)
